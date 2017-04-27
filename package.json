@@ -1,0 +1,55 @@
+{
+  "name": "miniprofiler",
+  "version": "1.2.3",
+  "description": "A simple but effective mini-profiler.",
+  "main": "lib/miniprofiler.js",
+  "scripts": {
+    "start-services": "docker run -d -p 6060:6379 redis",
+    "lint": "eslint .",
+    "test": "mocha tests/ -c",
+    "coverage": "istanbul cover ./node_modules/mocha/bin/_mocha -- tests/ -R spec",
+    "check-coverage": "istanbul check-coverage --statements 95 --branches 95 --functions 95 --lines 95",
+    "update-coveralls": "cat coverage/lcov.info | node ./node_modules/coveralls/bin/coveralls.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MiniProfiler/node.git"
+  },
+  "bugs": {
+    "url": "http://github.com/MiniProfiler/node/issues"
+  },
+  "author": "Guilherme Oenning <oenning.ti@gmail.com> (http://goenning.net/)",
+  "contributors": [
+    "Matt Jibson <matt.jibson@gmail.com> (https://mattjibson.com/)",
+    "Kevin Montrose"
+  ],
+  "license": "Apache-2.0",
+  "readmeFilename": "README.md",
+  "dependencies": {
+    "lru-cache": "^4.0.1"
+  },
+  "tags": [
+    "profiler",
+    "performance",
+    "profiling",
+    "timing",
+    "web profiling"
+  ],
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "coveralls": "^2.11.11",
+    "docker-ip": "^2.0.1",
+    "eslint": "^3.1.1",
+    "express": "^4.13.4",
+    "hapi": "^13.5.0",
+    "istanbul": "^0.4.3",
+    "koa": "^1.2.1",
+    "koa-route": "^2.4.2",
+    "koa-views": "^4.1.0",
+    "mocha": "^2.5.3",
+    "pug": "^2.0.0-beta2",
+    "redis": "^2.6.1",
+    "request": "^2.73.0",
+    "vision": "^4.1.0"
+  }
+}
